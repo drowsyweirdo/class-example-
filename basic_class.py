@@ -1,35 +1,25 @@
-#variables 
-
-# names cannot start with a number
-# there should be no spaces in the name use "_" instead
-# cannot use most of the special characters
-
-#strings are immutable in python
-
-# print formatting with strings
-
-# print('This is a string {}'.foramt('INSERTED'))
-# o/p This is a string INSERTED
-
-# print('The {0} {0} {0}'.format('fox','brown','quick'))
-
-# print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick'))
-
-# name = "Harsha"
-# print(f'hello my name is {name}')
-
-
-#dict 
-
-# my_dict = {'key1' : 'value1' , 'key2' : 'value2'}
-# print(my_dict)
-
-# prices = {'apple':2.99,'oranges' : 1.99,'milk': 5.80}
-# print(prices['apple'])
+class InfiniteOperations:
+    def __init__(self, *args):
+        self.sum = sum(args) 
+        self.product = 1
+        self.squares = []
+        
+        for arg in args:
+            self.product *= arg
+            self.squares.append(arg ** 2)
+        
+    
+    def get_sum(self):
+        return self.sum
+    
+    def get_product(self):
+        return self.product
+    
+    def get_squares(self):
+        return self.squares
 
 
-# name = 'Mississippi'
-# name.split()
-# print(set(name))
-
-# print(set(list('Mississippi')))
+numbers = InfiniteOperations(1, 2, 3, 5, 10, 80, 100, 120)
+print("Sum:", numbers.get_sum())         
+print("Product:", numbers.get_product()) 
+print("Squares:", numbers.get_squares())
